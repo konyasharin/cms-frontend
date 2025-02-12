@@ -1,11 +1,12 @@
 import { FC } from 'react';
 import { AppRouter } from '@app/lib/routes';
+import { AppShell, Header, headerConfig } from '@widgets/layout';
 
 const App: FC = () => {
   return (
-    <div className={'dark bg-secondary min-h-screen'}>
+    <AppShell config={{ header: headerConfig }} header={<Header />}>
       <AppRouter />
-    </div>
+    </AppShell>
   );
 };
 
