@@ -1,5 +1,10 @@
 import { FC } from 'react';
+import { Button } from '@shared/components/ui/button.tsx';
 
 export const HomePage: FC = () => {
-  return <div>123</div>;
+  return (
+    <div>
+      <Button className={'ml-32'}>123</Button>
+    </div>
+  );
 };
