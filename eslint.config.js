@@ -5,6 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import prettier from 'eslint-plugin-prettier'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import tseslint from 'typescript-eslint'
+import boundaries from 'eslint-plugin-boundaries'
 
 export default tseslint.config(
   { ignores: ['dist'] },
@@ -20,6 +21,7 @@ export default tseslint.config(
       'react-refresh': reactRefresh,
       'prettier': prettier,
       'simple-import-sort': simpleImportSort,
+      'boundaries': boundaries,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -28,6 +30,59 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
       'react-hooks/exhaustive-deps': 'off',
+      'boundaries/element-types': [
+        'error',
+        {
+          'default': 'allow',
+          'rules': [
+            {
+              'from': 'shared',
+              'disallow': [
+                'app',
+                'pages',
+                'widgets',
+                'features',
+                'entities'
+              ],
+              'message': 'import in shared scope from app, pages, widgets, features, entities is forbidden'
+            },
+            {
+              'from': 'entities',
+              'disallow': [
+                'app',
+                'pages',
+                'widgets',
+                'features',
+              ],
+              'message': 'import in entities scope from app, pages, widgets, features is forbidden'
+            },
+            {
+              'from': 'features',
+              'disallow': [
+                'app',
+                'pages',
+                'widgets',
+              ],
+              'message': 'import in features scope from app, pages, widgets is forbidden'
+            },
+            {
+              'from': 'widgets',
+              'disallow': [
+                'app',
+                'pages'
+              ],
+              'message': 'import in widgets scope from app, pages is forbidden'
+            },
+            {
+              'from': 'pages',
+              'disallow': [
+                'app',
+              ],
+              'message': 'import in widgets scope from app is forbidden'
+            },
+          ]
+        }
+      ],
       'simple-import-sort/imports': [
         'warn',
         {
@@ -67,7 +122,6 @@ export default tseslint.config(
         {
           selector: 'interface',
           format: ['PascalCase'],
-          prefix: ['I'],
         },
         {
           selector: 'typeAlias',

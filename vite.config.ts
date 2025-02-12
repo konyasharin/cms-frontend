@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
@@ -12,7 +14,12 @@ export default defineConfig({
   envPrefix: 'APP_',
   resolve: {
     alias: {
-      '@': '/src',
+      '@app': '/src/app',
+      '@pages': '/src/pages',
+      '@widgets': '/src/widgets',
+      '@features': '/src/features',
+      '@entities': '/src/entities',
+      '@shared': '/src/shared',
     },
   },
 });
