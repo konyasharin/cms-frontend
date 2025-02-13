@@ -4,7 +4,7 @@ import { Button } from '@shared/components/ui/button.tsx';
 export const HomePage: FC = () => {
   return (
     <div>
-      <Button className={'ml-32'}>123</Button>
+      <Button>123</Button>
     </div>
   );
 };
