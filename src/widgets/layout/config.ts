@@ -13,7 +13,7 @@ export const appShellConfig: AppShellConfig = {
 
 export const headerNavigationConfig: HeaderNavigationConfig = {
   items: [
-    { text: 'Приложения', link: APP_PATHS.HOME },
-    { text: 'Доступ', link: APP_PATHS.HOME },
+    { text: 'Приложения', link: APP_PATHS.APPS },
+    { text: 'Доступ', link: APP_PATHS.ACCESS },
   ],
 };

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { HomePage } from '@pages';
+import { AppsPage } from '@pages';
 import { APP_PATHS } from '@shared/const';
 
 interface Route {
@@ -8,5 +8,5 @@ interface Route {
 }
 
 export const routes: Route[] = [
-  { path: APP_PATHS.HOME, element: <HomePage /> },
+  { path: APP_PATHS.APPS, element: <AppsPage /> },
 ];
