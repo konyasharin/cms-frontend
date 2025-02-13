@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { HomePage } from '@pages/home';
+import { HomePage } from '@pages';
 import { APP_PATHS } from '@shared/const';
 
 interface Route {

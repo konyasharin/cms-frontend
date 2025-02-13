@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { routes } from '@app/config';
+import { NotFoundPage } from '@pages';
 
 export const AppRouter: FC = () => {
   return (
@@ -8,6 +9,7 @@ export const AppRouter: FC = () => {
       {routes.map(route => (
         <Route path={route.path} element={route.element} key={route.path} />
       ))}
+      <Route path={'*'} element={<NotFoundPage />} />
     </Routes>
   );
 };

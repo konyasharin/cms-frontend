@@ -1,7 +1,8 @@
 import { FC } from 'react';
-import { AppRouter } from '@app/lib/routes';
 import { Container } from '@shared/components';
 import { AppShell, appShellConfig, Header } from '@widgets/layout';
+
+import { AppRouter } from './appRouter.tsx';
 
 const App: FC = () => {
   return (
