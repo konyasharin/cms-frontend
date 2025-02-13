@@ -1,2 +1,3 @@
+export * from './app';
 export * from './apps';
-export * from './notFound';
+export * from './error';

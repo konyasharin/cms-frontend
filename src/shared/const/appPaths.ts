@@ -3,4 +3,5 @@ export const APP_PATHS = {
   APP: '/:id',
   APP_NEW: '/new',
   ACCESS: '/access',
+  ERROR: '/error',
 } as const;
